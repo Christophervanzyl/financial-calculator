@@ -6,7 +6,8 @@ import scala.annotation.tailrec
 
 trait CompoundInterestCalculator {
   def calculateCompoundInterest(principal: Double, interestRate: Double, years: Int, months: Int, compoundingPeriod: CompoundingPeriod): Double
-  def calculateCompoundInterestWithWithdrawal(principal: Double, annualInterestRate: Double, monthlyWithdrawalPercent: Double, years: Int): Double}
+  def calculateCompoundInterestWithWithdrawal(principal: Double, annualInterestRate: Double, monthlyWithdrawalPercent: Double, years: Int): Double
+}
 
 // TODO: Add annual and monthly repayments for the drawdown
 object DrawdownCalculator extends CompoundInterestCalculator {

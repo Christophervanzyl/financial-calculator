@@ -41,6 +41,7 @@ object FundValueCalculator {
    * @return
    */
   def calculateValues(term: Int, initialMonthlyPremium: Double, annualInterestRate: Double, boosterRate: Double, contributionYears: Int, investmentStrategy: InvestmentStrategy): List[FundValue] = {
+    // Not tail recursive but wont cause stack overflow because plausible values would  not be that high
     def go(year: Int, monthlyPremium: Double, premiumPaid: Double): List[FundValue] = {
       if (year > term) Nil
       else {
