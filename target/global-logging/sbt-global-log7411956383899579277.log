@@ -1,0 +1,122 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.3 (Azul Systems, Inc. Java 20.0.1)
+[debug]       Load.loadUnit: plugins took 46.410583ms
+[debug]       Load.loadUnit: defsScala took 0.127166ms
+[debug] [Loading] Scanning directory /Users/chrisvanzyl/.sbt/1.0/plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/chrisvanzyl/.sbt/1.0/plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 8.019958 ms
+[debug]           Load.resolveProject(global-plugins) took 23.177459ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: /Users/chrisvanzyl/.sbt/1.0/plugins, plugins: List(<none>))) took 42.548541ms
+[debug] [Loading] Done in /Users/chrisvanzyl/.sbt/1.0/plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 53.619583ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.09375ms
+[debug]     Load.loadUnit(file:/Users/chrisvanzyl/.sbt/1.0/plugins/, ...) took 104.671875ms
+[debug]   Load.apply: load took 876.036125ms
+[debug]   Load.apply: resolveProjects took 2.984625ms
+[debug]   Load.apply: finalTransforms took 27.704334ms
+[debug]   Load.apply: config.delegates took 2.368167ms
+[debug]   Load.apply: Def.make(settings)... took 160.844041ms
+[debug]   Load.apply: structureIndex took 39.118417ms
+[debug]   Load.apply: mkStreams took 0.577583ms
+[info] loading global plugins from /Users/chrisvanzyl/.sbt/1.0/plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 1693.665333ms
+[debug]           Load.loadUnit: plugins took 6.71ms
+[debug]           Load.loadUnit: defsScala took 0.002083ms
+[debug] [Loading] Scanning directory /Users/chrisvanzyl/IdeaProjects/financial-calculator/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/chrisvanzyl/IdeaProjects/financial-calculator/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 0.848166 ms
+[debug]               Load.resolveProject(financial-calculator-build) took 0.554208ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id financial-calculator-build, base: /Users/chrisvanzyl/IdeaProjects/financial-calculator/project, plugins: List(<none>))) took 1.7125ms
+[debug] [Loading] Done in /Users/chrisvanzyl/IdeaProjects/financial-calculator/project, returning: (financial-calculator-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2.65725ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.004959ms
+[debug]         Load.loadUnit(file:/Users/chrisvanzyl/IdeaProjects/financial-calculator/project/, ...) took 9.706834ms
+[debug]       Load.apply: load took 10.259958ms
+[debug]       Load.apply: resolveProjects took 0.047917ms
+[debug]       Load.apply: finalTransforms took 4.478709ms
+[debug]       Load.apply: config.delegates took 0.331166ms
+[debug]       Load.apply: Def.make(settings)... took 48.4505ms
+[debug]       Load.apply: structureIndex took 15.639916ms
+[debug]       Load.apply: mkStreams took 0.001375ms
+[info] loading project definition from /Users/chrisvanzyl/IdeaProjects/financial-calculator/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 239.091875ms
+[debug]     Load.loadUnit: defsScala took 0.001667ms
+[debug] [Loading] Scanning directory /Users/chrisvanzyl/IdeaProjects/financial-calculator
+[debug]       Load.loadUnit: mkEval took 2.85175ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 0.765166 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 1.161667ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: /Users/chrisvanzyl/IdeaProjects/financial-calculator, plugins: List(<none>))) took 2.376041ms
+[debug] [Loading] Done in /Users/chrisvanzyl/IdeaProjects/financial-calculator, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 895.752291ms
+[debug]     Load.loadUnit: cleanEvalClasses took 2.933375ms
+[debug]   Load.loadUnit(file:/Users/chrisvanzyl/IdeaProjects/financial-calculator/, ...) took 1138.201333ms
+[debug] Load.apply: load took 1138.995625ms
+[debug] Load.apply: resolveProjects took 0.056584ms
+[debug] Load.apply: finalTransforms took 6.591042ms
+[debug] Load.apply: config.delegates took 0.183625ms
+[debug] Load.apply: Def.make(settings)... took 50.871875ms
+[debug] Load.apply: structureIndex took 14.449ms
+[debug] Load.apply: mkStreams took 0.001417ms
+[info] set current project to financial-calculator (in build file:/Users/chrisvanzyl/IdeaProjects/financial-calculator/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///Users/chrisvanzyl/.sbt/1.0/server/7b6e9f1206e255551a50/sock
+[debug] Writing bsp connection file
+[info] started sbt server
