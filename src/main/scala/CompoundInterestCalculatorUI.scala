@@ -1,9 +1,77 @@
+import DrawdownInfoUI.showDrawdownInfo
+import FundValueInfoUI.showFundValueInfo
+import IncomeTaxInfoUI.showIncomeTaxInfo
 import calculators.ThreeInOneCalculator.toCalculationResult
-import models.{CompoundingPeriod, InvestmentStrategy}
+import models.{CalculationResult, CompoundingPeriod, InvestmentStrategy}
 
 import scala.swing._
 import scala.swing.event.ButtonClicked
 import scala.util.Try
+
+object IncomeTaxInfoUI extends Frame {
+  title = "Income Tax Info" // set the title
+  location = new Point(50, 200) // set the initial position
+  val resultTextArea = new TextArea {
+    editable = false
+    lineWrap = true
+    wordWrap = true
+    preferredSize = new Dimension(400, 400)
+  }
+  contents = new ScrollPane(resultTextArea)
+
+  def showIncomeTaxInfo(result: CalculationResult): Unit = {
+    resultTextArea.text = f"""
+                             |Yearly Income: ${result.yearlyIncome}%.2f
+                             |Monthly Income: ${result.monthlyIncome}%.2f
+                             |Net Monthly Income: ${result.netMonthlyIncome}%.2f
+                             |Max Retirement Annuity Benefit: ${result.maxRetirementAnnuityBenefit}%.2f
+                             |Monthly Tax: ${result.monthlyTax}%.2f""".stripMargin
+    this.visible = true
+  }
+}
+
+object DrawdownInfoUI extends Frame {
+  title = "Drawdown Info" // set the title
+  location = new Point(1400, 200) // set the initial position
+  val resultTextArea = new TextArea {
+    editable = false
+    lineWrap = true
+    wordWrap = true
+    preferredSize = new Dimension(400, 400)
+  }
+  contents = new ScrollPane(resultTextArea)
+
+  def showDrawdownInfo(result: CalculationResult): Unit = {
+    resultTextArea.text = f"""|Initial Investment Value: ${result.initialInvestmentValue}%.2f
+                              |Future Investment Value: ${result.futureInvestmentValue}%.2f
+                              |Total Interest: ${result.totalInterest}%.2f
+                              |Interest Rate: ${result.interestRate}%.2f
+          """.stripMargin
+      this.visible = true
+  }
+}
+
+object FundValueInfoUI extends Frame {
+  title = "Fund Value Info" // set the title
+  location = new Point(450, 200) // set the initial position
+  preferredSize = new Dimension(600, 600)
+  val resultTextArea = new TextArea {
+    editable = false
+    lineWrap = true
+    wordWrap = true
+  }
+  contents = new ScrollPane(resultTextArea)
+
+  def showFundValueInfo(result: CalculationResult): Unit = {
+    val texts = result.values.map { fundValue =>
+      f"""
+         |Year: ${fundValue.year}%.2f, Premium Paid: ${fundValue.premiumPaid}%.2f, Fund Value without Booster: ${fundValue.fundValueWithoutBooster}%.2f, Booster Value: ${fundValue.boosterValue}%.2f, Total Fund Value: ${fundValue.totalFundValue}%.2f
+        """.stripMargin
+    }
+    resultTextArea.text = texts.mkString("\n")
+    this.visible = true
+  }
+}
 
 /***
  * Simple GUI for viewing all the calculators
@@ -88,27 +156,10 @@ object EncompassingCalculatorUI extends SimpleSwingApplication {
         (incomeOpt, raOpt, interestRateOpt, withDrawRateOpt, yearsOpt, monthsOpt, compoundingPeriodOpt, investmentStrategyOpt) match {
           case (Some(income), Some(ra), Some(interestRate), Some(withDrawRate), Some(years), Some(months), Some(compoundingPeriod), Some(investmentStrategy)) =>
             val result = toCalculationResult(income, ra, interestRate, withDrawRate, years, months, compoundingPeriod, investmentStrategy)
+              showIncomeTaxInfo(result)
+              showFundValueInfo(result)
+              showDrawdownInfo(result)
 
-            // Update resultTextArea with values from result
-            resultTextArea.text =
-              f"""
-                 |Yearly Income: ${result.yearlyIncome}%.2f
-                 |Max Retirement Annuity Benefit: ${result.maxRetirementAnnuityBenefit}%.2f
-                 |Monthly Income: ${result.monthlyIncome}%.2f
-                 |Monthly Tax: ${result.monthlyTax}%.2f
-                 |Net Monthly Income: ${result.netMonthlyIncome}%.2f
-                 |Future Investment Value: ${result.futureInvestmentValue}%.2f
-                 |Total Interest: ${result.totalInterest}%.2f
-                 |Initial Investment Value: ${result.initialInvestmentValue}%.2f
-                 |Interest Rate: ${result.interestRate}%.2f
-          """.stripMargin
-            result.values.foreach { fundValue =>
-              resultTextArea.append(
-                f"""
-                   |Year: ${fundValue.year}%.2f, Premium Paid: ${fundValue.premiumPaid}%.2f, Fund Value without Booster: ${fundValue.fundValueWithoutBooster}%.2f, Booster Value: ${fundValue.boosterValue}%.2f, Total Fund Value: ${fundValue.totalFundValue}%.2f
-            """.stripMargin
-              )
-            }
           case _ => resultTextArea.text = "Error: Invalid input. Please check your inputs and try again."
         }
     }
@@ -117,10 +168,4 @@ object EncompassingCalculatorUI extends SimpleSwingApplication {
   private def parseDouble(s: String): Option[Double] = Try(s.toDouble).toOption
 
   private def parseInt(s: String): Option[Int] = Try(s.toInt).toOption
-}
-
-object CompoundInterestCalculatorMain {
-  def main(args: Array[String]): Unit = {
-    EncompassingCalculatorUI.main(args)
-  }
 }

@@ -1,5 +1,6 @@
 package calculators
 
+import models.CompoundingPeriod
 import models.CompoundingPeriod.CompoundingPeriod
 
 import scala.annotation.tailrec
@@ -7,6 +8,7 @@ import scala.annotation.tailrec
 trait CompoundInterestCalculator {
   def calculateCompoundInterest(principal: Double, interestRate: Double, years: Int, months: Int, compoundingPeriod: CompoundingPeriod): Double
   def calculateCompoundInterestWithWithdrawal(principal: Double, annualInterestRate: Double, monthlyWithdrawalPercent: Double, years: Int): Double
+  def calculateTwoPartRetirement(principal: Double, age: Int): Double
 }
 
 // TODO: Add annual and monthly repayments for the drawdown
@@ -51,5 +53,12 @@ object DrawdownCalculator extends CompoundInterestCalculator {
     }
 
     compoundAmount(months, principal, 0)
+  }
+
+  override def calculateTwoPartRetirement(principal: Double, age: Int): Double = {
+    val yearsToGo = 55 - age
+    val newPrincipal = if ((principal * 0.33) < 25000) principal - (principal * 0.33) else (principal - 25000)
+
+    calculateCompoundInterest(newPrincipal, 15, yearsToGo, 0, CompoundingPeriod.Yearly)
   }
 }

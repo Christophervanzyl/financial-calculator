@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/chrisvanzyl/IdeaProjects/financial-calculator/src/main/scala/calculators/BasicIncomeTaxCalculator.scala:34:12: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      case amount => ((amount - 1817000) * 0.45) + 644489[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/chrisvanzyl/IdeaProjects/financial-calculator/src/main/scala/calculators/BasicIncomeTaxCalculator.scala:35:17: unreachable code due to variable pattern 'amount' on line 34[0m
+[0m[[0m[33mwarn[0m] [0m[0m      case _ => 0.0 // Default case to cover any remaining possibilities[0m
+[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
